@@ -14,10 +14,16 @@ class DatabaseTest extends TestCase
      *
      * @return void
      */
-    public function testDatabase()
+    public function testDatabaseHas()
     {
         $this->assertDatabaseHas('users', [
            'email' => 'herman42@example.org'
+        ]);
+    }
+    public function testDatabaseMissing()
+    {
+        $this->assertDatabaseMissing('posts', [
+            'title' => 'Hello World'
         ]);
     }
 }
